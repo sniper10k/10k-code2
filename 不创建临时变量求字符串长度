@@ -1,0 +1,22 @@
+# 10k-code2
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+//思路:先判断第一个"bit"是否为'\0';
+//1+mystrlen("it")
+//1+1+mystrlen("t")
+//my_strlen(str+1):地址+1得到下一位的地址;
+int my_strlen(char* str)
+{
+	if (*str != '\0')
+		return 1 + my_strlen(str + 1);
+	else
+		return 0;
+}
+int main()
+{
+	char arr[] = "bit";
+	int len = my_strlen(arr);
+	printf("len = %d\n", len);
+	return 0;
+}
